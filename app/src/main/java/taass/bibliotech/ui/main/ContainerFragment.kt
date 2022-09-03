@@ -51,7 +51,7 @@ class ContainerFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val view: View = inflater.inflate(R.layout.container_frament, container, false)
+        val view: View = inflater.inflate(R.layout.container_fragment, container, false)
         val pageSection = arguments?.getString(SECTION)
 
         val sharedPreferences =
