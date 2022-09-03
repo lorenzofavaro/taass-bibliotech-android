@@ -12,17 +12,17 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent">
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
             android:id="@+id/imageView"
             android:layout_width="170sp"
             android:layout_height="170sp"
             android:layout_gravity="center_horizontal"
-            android:src="@drawable/logo"
             android:layout_marginBottom="10sp"
+            android:src="@drawable/logo"
             app:layout_constraintBottom_toTopOf="@+id/textView"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.497"
@@ -36,12 +36,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:fontFamily="cursive"
             android:text="@string/app_name"
             android:textColor="@color/design_default_color_on_secondary"
             android:textSize="36sp"
-            android:textStyle="normal"
-            android:typeface="sans"/>
+            android:textStyle="bold"
+            android:typeface="sans" />
 
 
     </LinearLayout>
