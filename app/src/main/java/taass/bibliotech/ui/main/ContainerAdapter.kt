@@ -1,15 +1,14 @@
-package com.example.books.ui.main
+package taass.bibliotech.ui.main
 
 import android.content.Intent
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.example.books.R
-import com.example.books.model.Books
-import com.example.books.ui.BookDetail
+import taass.bibliotech.R
+import taass.bibliotech.model.Books
+import taass.bibliotech.ui.BookDetail
 import com.google.gson.Gson
 import kotlinx.android.synthetic.main.product_item_layout.view.*
 

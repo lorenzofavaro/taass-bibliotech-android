@@ -1,11 +1,8 @@
-package com.example.books.ui.main
+package taass.bibliotech.ui.main
 
 import android.app.Activity
-import android.content.Context
-import android.content.SharedPreferences
 import android.os.Build
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,8 +10,8 @@ import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.books.R
-import com.example.books.model.Books
+import taass.bibliotech.R
+import taass.bibliotech.model.Books
 import com.google.gson.Gson
 
 class ContainerFragment : Fragment() {

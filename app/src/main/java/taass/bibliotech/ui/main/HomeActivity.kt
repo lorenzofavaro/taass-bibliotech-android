@@ -1,12 +1,12 @@
-package com.example.books.ui.main
+package taass.bibliotech.ui.main
 
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
-import com.example.books.R
-import com.example.books.databinding.ActivityHomeBinding
-import com.example.books.ui.StudyActivity
+import taass.bibliotech.R
+import taass.bibliotech.databinding.ActivityHomeBinding
+import taass.bibliotech.ui.StudyActivity
 import kotlinx.android.synthetic.main.activity_home.*
 
 class HomeActivity : AppCompatActivity() {

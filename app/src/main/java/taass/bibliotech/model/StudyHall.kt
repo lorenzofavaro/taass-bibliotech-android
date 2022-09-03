@@ -1,4 +1,4 @@
-package com.example.books.model
+package taass.bibliotech.model
 
 data class StudyHall (
     val id: Long,

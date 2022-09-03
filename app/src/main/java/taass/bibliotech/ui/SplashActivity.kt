@@ -1,4 +1,4 @@
-package com.example.books.ui
+package taass.bibliotech.ui
 
 import android.app.Activity
 import android.content.Intent
@@ -9,10 +9,10 @@ import com.android.volley.Request
 import com.android.volley.RequestQueue
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
-import com.example.books.R
-import com.example.books.model.Books
-import com.example.books.model.StudyHall
-import com.example.books.ui.main.HomeActivity
+import taass.bibliotech.R
+import taass.bibliotech.model.Books
+import taass.bibliotech.model.StudyHall
+import taass.bibliotech.ui.main.HomeActivity
 import com.google.gson.Gson
 
 

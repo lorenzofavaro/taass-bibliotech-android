@@ -1,4 +1,4 @@
-package com.example.books.model
+package taass.bibliotech.model
 
 data class Category (
     val id: Long,

@@ -1,4 +1,4 @@
-package com.example.books.ui
+package taass.bibliotech.ui
 
 import android.view.LayoutInflater
 import android.view.View
@@ -6,8 +6,8 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.books.R
-import com.example.books.model.StudyHall
+import taass.bibliotech.R
+import taass.bibliotech.model.StudyHall
 
 class StudyHallsAdapter(private val mList: List<StudyHall>) : RecyclerView.Adapter<StudyHallsAdapter.ViewHolder>() {
 
