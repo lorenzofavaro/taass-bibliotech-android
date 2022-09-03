@@ -20,8 +20,8 @@ class HomeActivity : AppCompatActivity() {
         setupViewPager()
 
         bottomNavigationView.setOnNavigationItemSelectedListener {
-            when(it.itemId){
-                R.id.study->{
+            when (it.itemId) {
+                R.id.study -> {
                     val intent = Intent(this, StudyActivity::class.java)
                     startActivity(intent)
                 }

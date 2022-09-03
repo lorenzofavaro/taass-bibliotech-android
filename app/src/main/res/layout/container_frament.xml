@@ -21,15 +21,15 @@
             android:layout_marginRight="8dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textViewRecommnded" />
+            app:layout_constraintTop_toBottomOf="@+id/textViewFantasy" />
 
         <TextView
-            android:id="@+id/textViewRecommnded"
+            android:id="@+id/textViewFantasy"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:layout_marginStart="8dp"
-            android:text="Consigliati"
+            android:text="Fantasy"
             android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -39,7 +39,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
             android:layout_marginTop="8dp"
             android:text="Romanzi"
             android:textSize="20sp"
@@ -66,7 +65,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
             android:layout_marginTop="8dp"
             android:text="Classici"
             android:textSize="20sp"
@@ -89,13 +87,12 @@
             app:layout_constraintTop_toBottomOf="@+id/textViewChines" />
 
         <TextView
-            android:id="@+id/textViewThai"
+            android:id="@+id/textViewPsycho"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
             android:layout_marginTop="8dp"
-            android:text="Lingue"
+            android:text="Psicologia"
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -113,7 +110,7 @@
             android:layout_marginRight="8dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textViewThai" />
+            app:layout_constraintTop_toBottomOf="@+id/textViewPsycho" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

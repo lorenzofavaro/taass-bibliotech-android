@@ -22,11 +22,11 @@ class ContainerAdapter (private var items: List<Books> ) : RecyclerView.Adapter<
     override fun getItemCount(): Int { return items.size }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val item: Books = items.get(position)
+        val item: Books = items[position]
         holder.chapterName.text = item.title
 
-        Glide.with(holder.itemView.context)//.asGif()
-            .load(item.picture) //.apply(RequestOptions.circleCropTransform())
+        Glide.with(holder.itemView.context)
+            .load(item.picture)
             .into(holder.productIcon)
 
         holder.itemView.setOnClickListener {

@@ -18,10 +18,10 @@ class ContainerFragment : Fragment() {
 
     private lateinit var adapter: ContainerAdapter
 
-    private val LABEL_CONSIGLIATO = "Consigliato"
+    private val LABEL_FANTASY = "Fantasy"
     private val LABEL_CLASSICO = "Classico"
     private val LABEL_ROMANZO = "Romanzo"
-    private val LABEL_LINGUE = "Lingua"
+    private val LABEL_PSICOLOGIA = "Psicologia"
 
     private var allBooks: List<Books> = ArrayList()
 
@@ -79,13 +79,13 @@ class ContainerFragment : Fragment() {
                 continue
 
             for (category in bookCategories) {
-                if (category.name == LABEL_CONSIGLIATO)
+                if (category.name == LABEL_FANTASY)
                     productsRecommended.add(book)
                 if (category.name == LABEL_CLASSICO)
                     productsClassici.add(book)
                 if (category.name == LABEL_ROMANZO)
                     productsRomanzi.add(book)
-                if (category.name == LABEL_LINGUE)
+                if (category.name == LABEL_PSICOLOGIA)
                     productsLingue.add(book)
             }
         }

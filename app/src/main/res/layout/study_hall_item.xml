@@ -28,6 +28,7 @@
                 android:layout_height="130dp"
                 android:background="?attr/selectableItemBackgroundBorderless"
                 android:scaleType="fitXY" />
+
             <TextView
                 android:id="@+id/title"
                 style="@style/TextAppearance.AppCompat.Headline"
@@ -39,10 +40,9 @@
                 android:layout_marginBottom="8dp"
                 android:padding="8dp"
                 android:text="Title"
-                android:textSize="26dp"
-                android:textStyle="bold"
                 android:textColor="@color/white"
-                />
+                android:textSize="26dp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/address"
