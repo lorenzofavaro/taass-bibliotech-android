@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View"/>
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".ui.fragments.product_detail.ProductDetailFragment">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_product_detail_image"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_200dp"
+            android:adjustViewBounds="true"
+            android:background="@color/design_default_color_primary" />
+
+        <LinearLayout
+            android:id="@+id/linear_layout_product_detail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:background="@color/white"
+            android:orientation="vertical"
+            android:padding="@dimen/dimen_16dp">
+
+            <TextView
+                android:id="@+id/iv_product_detail_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/dimen_18sp"
+                tools:text="Poster of Homer" />
+
+            <TextView
+                android:id="@+id/iv_product_detail_author"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/dimen_16sp"
+                tools:text="Poster of Homer"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/iv_product_detail_desc_label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_8dp"
+            android:layout_marginHorizontal="@dimen/dimen_16dp"
+            android:text="Descrizione:"
+            android:textSize="@dimen/dimen_18sp" />
+
+        <TextView
+            android:id="@+id/iv_product_detail_desc_value"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dimen_16dp"
+            tools:text="Poster of Hoer"
+            android:textSize="@dimen/dimen_16sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+
+            android:layout_marginTop="@dimen/dimen_8dp"
+            android:layout_marginHorizontal="@dimen/dimen_16dp">
+
+            <TextView
+                android:id="@+id/iv_product_detail_categories"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Categorie:"
+                android:textSize="@dimen/dimen_18sp" />
+
+            <TextView
+                android:id="@+id/iv_product_detail_categoriesy_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_8dp"
+                android:paddingHorizontal="@dimen/dimen_12dp"
+                android:paddingVertical="@dimen/dimen_4dp"
+                android:includeFontPadding="false"
+                android:textSize="@dimen/dimen_16sp"
+                android:layout_marginBottom="@dimen/dimen_2dp"
+                tools:text="Azione"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+
+            android:layout_marginHorizontal="@dimen/dimen_16dp">
+
+            <TextView
+                android:id="@+id/iv_product_detail_stock_quantity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Disponibilità:"
+                android:textSize="@dimen/dimen_18sp" />
+
+            <TextView
+                android:id="@+id/iv_product_detail_stock_quantity_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_8dp"
+                android:paddingHorizontal="@dimen/dimen_12dp"
+                android:paddingVertical="@dimen/dimen_4dp"
+                android:includeFontPadding="false"
+                android:textSize="@dimen/dimen_16sp"
+                android:layout_marginBottom="@dimen/dimen_2dp"
+                tools:text="9"/>
+
+        </LinearLayout>
+    </LinearLayout>
+
+</layout>
