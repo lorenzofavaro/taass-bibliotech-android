@@ -7,8 +7,8 @@ import taass.bibliotech.R
 import taass.bibliotech.model.Category
 import com.google.gson.Gson
 import kotlinx.android.synthetic.main.activity_details.*
-import kotlinx.android.synthetic.main.product_item_layout.*
-import kotlinx.android.synthetic.main.product_item_layout.view.*
+import kotlinx.android.synthetic.main.book_item.*
+import kotlinx.android.synthetic.main.book_item.view.*
 
 class BookDetail : AppCompatActivity() {
 
@@ -26,15 +26,15 @@ class BookDetail : AppCompatActivity() {
 
         title = intent.getStringExtra("title").toString()
 
-        Glide.with(this)//.asGif()
-            .load(intent.getStringExtra("image")) //.apply(RequestOptions.circleCropTransform())
+        Glide.with(this)
+            .load(intent.getStringExtra("image"))
             .centerCrop()
-            .into(iv_product_detail_image)
+            .into(book_detail_image)
 
-        iv_product_detail_title.text = intent.getStringExtra("title")
-        iv_product_detail_author.text = intent.getStringExtra("author")
-        iv_product_detail_desc_value.text = intent.getStringExtra("description")
-        iv_product_detail_stock_quantity_value.text = intent.getLongExtra("stock", 0).toString()
+        book_title.text = intent.getStringExtra("title")
+        book_author.text = intent.getStringExtra("author")
+        book_description.text = intent.getStringExtra("description")
+        book_stock.text = intent.getLongExtra("stock", 0).toString()
 
         categories =
             Gson().fromJson(intent.getStringExtra("categories"), Array<Category>::class.java)
@@ -44,7 +44,7 @@ class BookDetail : AppCompatActivity() {
             categories_text = categories_text + " " + category.name
         }
 
-        iv_product_detail_categoriesy_value.text = categories_text
+        book_categories.text = categories_text
     }
 
 

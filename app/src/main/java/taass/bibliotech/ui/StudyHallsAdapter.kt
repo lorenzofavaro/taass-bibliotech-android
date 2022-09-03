@@ -9,7 +9,8 @@ import androidx.recyclerview.widget.RecyclerView
 import taass.bibliotech.R
 import taass.bibliotech.model.StudyHall
 
-class StudyHallsAdapter(private val mList: List<StudyHall>) : RecyclerView.Adapter<StudyHallsAdapter.ViewHolder>() {
+class StudyHallsAdapter(private val mList: List<StudyHall>) :
+    RecyclerView.Adapter<StudyHallsAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context)
@@ -18,7 +19,6 @@ class StudyHallsAdapter(private val mList: List<StudyHall>) : RecyclerView.Adapt
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-
         val studyHall = mList[position]
 
         holder.imageView.setImageResource(R.drawable.img)

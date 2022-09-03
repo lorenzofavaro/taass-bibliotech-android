@@ -19,8 +19,8 @@ class StudyActivity : AppCompatActivity() {
         setContentView(R.layout.activity_study)
 
         bottomNavigationView.setOnNavigationItemSelectedListener {
-            when(it.itemId){
-                R.id.books->{
+            when (it.itemId) {
+                R.id.books -> {
                     val intent = Intent(this, HomeActivity::class.java)
                     startActivity(intent)
                 }
@@ -28,11 +28,15 @@ class StudyActivity : AppCompatActivity() {
             true
         }
 
-        bottomNavigationView.selectedItemId = R.id.study;
+        bottomNavigationView.selectedItemId = R.id.study
 
 
-        val sharedPreferences = applicationContext.getSharedPreferences("data", Activity.MODE_PRIVATE)
-        val studyHalls = Gson().fromJson(sharedPreferences.getString("studyhalls", ""), Array<StudyHall>::class.java).asList()
+        val sharedPreferences =
+            applicationContext.getSharedPreferences("data", Activity.MODE_PRIVATE)
+        val studyHalls = Gson().fromJson(
+            sharedPreferences.getString("studyhalls", ""),
+            Array<StudyHall>::class.java
+        ).asList()
 
         val recyclerview = findViewById<RecyclerView>(R.id.recyclerview)
         recyclerview.layoutManager = LinearLayoutManager(this)

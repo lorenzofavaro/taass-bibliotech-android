@@ -39,7 +39,6 @@ class HomeActivity : AppCompatActivity() {
             adapter.addFragment(itemFrame, item)
         }
 
-
         binding?.viewpager!!.adapter = adapter
     }
 

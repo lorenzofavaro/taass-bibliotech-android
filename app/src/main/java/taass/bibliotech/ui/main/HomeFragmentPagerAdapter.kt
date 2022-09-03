@@ -4,7 +4,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 
-class HomeFragmentPagerAdapter (manager: FragmentManager) : FragmentPagerAdapter(manager) {
+class HomeFragmentPagerAdapter(manager: FragmentManager) : FragmentPagerAdapter(manager) {
 
     private val mFragmentList: ArrayList<Fragment> = ArrayList()
     private val mFragmentTitleList: ArrayList<String> = ArrayList()
@@ -22,7 +22,7 @@ class HomeFragmentPagerAdapter (manager: FragmentManager) : FragmentPagerAdapter
         mFragmentTitleList.add(title)
     }
 
-    override fun getPageTitle(position: Int): CharSequence? {
+    override fun getPageTitle(position: Int): CharSequence {
         return mFragmentTitleList[position]
     }
 }

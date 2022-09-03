@@ -1,5 +1,6 @@
 package taass.bibliotech.ui
 
+import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
@@ -16,11 +17,12 @@ import taass.bibliotech.ui.main.HomeActivity
 import com.google.gson.Gson
 
 
+@SuppressLint("CustomSplashScreen")
 class SplashActivity : Activity() {
 
     private lateinit var mRequestQueue: RequestQueue
-    private val API_GET_BOOKS = "http://10.0.2.2:8080/catalog-service/catalog/allCatalog"
-    private val API_GET_STUDY_HALLS = "http://10.0.2.2:8080/studyhalls-service/studyhalls/all"
+    private val apiGetBooks = "http://10.0.2.2:8080/catalog-service/catalog/allCatalog"
+    private val apiGetStudyHalls = "http://10.0.2.2:8080/studyhalls-service/studyhalls/all"
 
     private var booksReady = false
     private var studyHallsReady = false
@@ -28,40 +30,42 @@ class SplashActivity : Activity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
-        mRequestQueue = Volley.newRequestQueue(this);
-        pauseToLaunch();
+        mRequestQueue = Volley.newRequestQueue(this)
+        pauseToLaunch()
     }
 
-    private fun pauseToLaunch(){
+    private fun pauseToLaunch() {
         Handler().postDelayed({
-            downloadData();
+            downloadData()
         }, 0)
     }
 
     private fun downloadData() {
-        val requestBooks = StringRequest(Request.Method.GET, API_GET_BOOKS,
+        val requestBooks = StringRequest(Request.Method.GET, apiGetBooks,
             { response ->
-                val list: List<Books> = Gson().fromJson(response.toString(), Array<Books>::class.java).asList()
+                val list: List<Books> =
+                    Gson().fromJson(response.toString(), Array<Books>::class.java).asList()
                 Log.d("TAG", list.toString())
                 val sharedPreferences = this.getSharedPreferences("data", MODE_PRIVATE)
                 val editor = sharedPreferences.edit()
                 editor.putString("catalog", response.toString())
-                editor.commit()
+                editor.apply()
                 booksReady = true
-                checkReady();
+                checkReady()
             },
             { error -> error.printStackTrace() })
 
-        val requestStudyHalls = StringRequest(Request.Method.GET, API_GET_STUDY_HALLS,
+        val requestStudyHalls = StringRequest(Request.Method.GET, apiGetStudyHalls,
             { response ->
-                val list: List<StudyHall> = Gson().fromJson(response.toString(), Array<StudyHall>::class.java).asList()
+                val list: List<StudyHall> =
+                    Gson().fromJson(response.toString(), Array<StudyHall>::class.java).asList()
                 Log.d("TAG", list.toString())
                 val sharedPreferences = this.getSharedPreferences("data", MODE_PRIVATE)
                 val editor = sharedPreferences.edit()
                 editor.putString("studyhalls", response.toString())
-                editor.commit()
-                studyHallsReady = true;
-                checkReady();
+                editor.apply()
+                studyHallsReady = true
+                checkReady()
             },
             { error -> error.printStackTrace() })
 
@@ -70,7 +74,7 @@ class SplashActivity : Activity() {
     }
 
 
-    private fun showMainActivity(){
+    private fun showMainActivity() {
         val intent = Intent(this, HomeActivity::class.java)
         startActivity(intent)
         finish()

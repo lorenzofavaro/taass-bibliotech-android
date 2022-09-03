@@ -11,18 +11,17 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        tools:context=".ui.fragments.product_detail.ProductDetailFragment">
+        android:orientation="vertical">
 
         <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/iv_product_detail_image"
+            android:id="@+id/book_detail_image"
             android:layout_width="match_parent"
             android:layout_height="@dimen/dimen_200dp"
             android:adjustViewBounds="true"
             android:background="@color/design_default_color_primary" />
 
         <LinearLayout
-            android:id="@+id/linear_layout_product_detail"
+            android:id="@+id/linear_layout_book_detail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
@@ -31,23 +30,23 @@
             android:padding="@dimen/dimen_16dp">
 
             <TextView
-                android:id="@+id/iv_product_detail_title"
+                android:id="@+id/book_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="@dimen/dimen_18sp"
-                tools:text="Poster of Homer" />
+                tools:text="La divina commedia" />
 
             <TextView
-                android:id="@+id/iv_product_detail_author"
+                android:id="@+id/book_author"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="@dimen/dimen_16sp"
-                tools:text="Poster of Homer"/>
+                tools:text="Dante"/>
 
         </LinearLayout>
 
         <TextView
-            android:id="@+id/iv_product_detail_desc_label"
+            android:id="@+id/book_description_label"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dimen_8dp"
@@ -56,11 +55,11 @@
             android:textSize="@dimen/dimen_18sp" />
 
         <TextView
-            android:id="@+id/iv_product_detail_desc_value"
+            android:id="@+id/book_description"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/dimen_16dp"
-            tools:text="Poster of Hoer"
+            tools:text="Contenuto della descrizione"
             android:textSize="@dimen/dimen_16sp" />
 
         <LinearLayout
@@ -72,14 +71,14 @@
             android:layout_marginHorizontal="@dimen/dimen_16dp">
 
             <TextView
-                android:id="@+id/iv_product_detail_categories"
+                android:id="@+id/book_categories_label"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Categorie:"
                 android:textSize="@dimen/dimen_18sp" />
 
             <TextView
-                android:id="@+id/iv_product_detail_categoriesy_value"
+                android:id="@+id/book_categories"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/dimen_8dp"
@@ -100,14 +99,14 @@
             android:layout_marginHorizontal="@dimen/dimen_16dp">
 
             <TextView
-                android:id="@+id/iv_product_detail_stock_quantity"
+                android:id="@+id/book_stock_label"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Disponibilità:"
                 android:textSize="@dimen/dimen_18sp" />
 
             <TextView
-                android:id="@+id/iv_product_detail_stock_quantity_value"
+                android:id="@+id/book_stock"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/dimen_8dp"

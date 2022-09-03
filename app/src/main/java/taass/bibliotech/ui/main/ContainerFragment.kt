@@ -1,12 +1,10 @@
 package taass.bibliotech.ui.main
 
 import android.app.Activity
-import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -18,22 +16,20 @@ class ContainerFragment : Fragment() {
 
     private lateinit var adapter: ContainerAdapter
 
-    private val LABEL_FANTASY = "Fantasy"
-    private val LABEL_CLASSICO = "Classico"
-    private val LABEL_ROMANZO = "Romanzo"
-    private val LABEL_PSICOLOGIA = "Psicologia"
-
+    private val labelFantasy = "Fantasy"
+    private val labelClassic = "Classico"
+    private val labelRomance = "Romanzo"
+    private val labelPsycho = "Psicologia"
     private var allBooks: List<Books> = ArrayList()
-
-    private val productsRecommended: MutableList<Books> = ArrayList()
-    private val productsRomanzi: MutableList<Books> = ArrayList()
-    private val productsClassici: MutableList<Books> = ArrayList()
-    private val productsLingue: MutableList<Books> = ArrayList()
+    private val fantasyBooks: MutableList<Books> = ArrayList()
+    private val romanceBooks: MutableList<Books> = ArrayList()
+    private val classicBooks: MutableList<Books> = ArrayList()
+    private val psychoBooks: MutableList<Books> = ArrayList()
 
 
     companion object {
 
-        val SECTION: String = "section"
+        const val SECTION: String = "section"
 
         @JvmStatic
         fun newInstance(name: String): ContainerFragment {
@@ -49,28 +45,28 @@ class ContainerFragment : Fragment() {
     private lateinit var layoutManager: RecyclerView.LayoutManager
 
 
-    @RequiresApi(Build.VERSION_CODES.N)
     override fun onCreateView(
 
         inflater: LayoutInflater,
         container: ViewGroup?,
-        savedInstanceState: Bundle?): View?
-    {
-        val view:View = inflater.inflate(R.layout.container_frament, container, false)
-        val page_section = arguments?.getString(SECTION)
+        savedInstanceState: Bundle?
+    ): View {
+        val view: View = inflater.inflate(R.layout.container_frament, container, false)
+        val pageSection = arguments?.getString(SECTION)
 
-        val sharedPreferences = requireActivity().applicationContext.getSharedPreferences("data", Activity.MODE_PRIVATE)
-        allBooks = Gson().fromJson(sharedPreferences.getString("catalog", ""), Array<Books>::class.java).asList()
+        val sharedPreferences =
+            requireActivity().applicationContext.getSharedPreferences("data", Activity.MODE_PRIVATE)
+        allBooks =
+            Gson().fromJson(sharedPreferences.getString("catalog", ""), Array<Books>::class.java)
+                .asList()
 
-        if (page_section != null) {
-            loadProducts(view, page_section)
+        if (pageSection != null) {
+            loadBooks(view)
         }
-
         return view
     }
 
-    @RequiresApi(Build.VERSION_CODES.N)
-    private fun loadProducts(view: View, page_section: String) {
+    private fun loadBooks(view: View) {
 
         //Suddivisioni per categoria
         for (book in allBooks) {
@@ -79,45 +75,44 @@ class ContainerFragment : Fragment() {
                 continue
 
             for (category in bookCategories) {
-                if (category.name == LABEL_FANTASY)
-                    productsRecommended.add(book)
-                if (category.name == LABEL_CLASSICO)
-                    productsClassici.add(book)
-                if (category.name == LABEL_ROMANZO)
-                    productsRomanzi.add(book)
-                if (category.name == LABEL_PSICOLOGIA)
-                    productsLingue.add(book)
+                if (category.name == labelFantasy)
+                    fantasyBooks.add(book)
+                if (category.name == labelClassic)
+                    classicBooks.add(book)
+                if (category.name == labelRomance)
+                    romanceBooks.add(book)
+                if (category.name == labelPsycho)
+                    psychoBooks.add(book)
             }
         }
 
-        val recyclerViewProducts = view.findViewById<RecyclerView>(R.id.rv_recommend)
+        //Section Fantasy
+        val fantasyBooksView = view.findViewById<RecyclerView>(R.id.rv_fantasy)
         layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
-        recyclerViewProducts?.layoutManager = layoutManager
-        adapter = ContainerAdapter(productsRecommended)
-        recyclerViewProducts?.adapter = adapter
-
+        fantasyBooksView?.layoutManager = layoutManager
+        adapter = ContainerAdapter(fantasyBooks)
+        fantasyBooksView?.adapter = adapter
 
         //Section Romanzi
-        val vegRecyclerView = view.findViewById<RecyclerView>(R.id.rv_romanzi)
+        val romanceBooksView = view.findViewById<RecyclerView>(R.id.rv_romance)
         layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
-        vegRecyclerView?.layoutManager = layoutManager
-        adapter = ContainerAdapter(productsRomanzi)
-        vegRecyclerView?.adapter = adapter
+        romanceBooksView?.layoutManager = layoutManager
+        adapter = ContainerAdapter(romanceBooks)
+        romanceBooksView?.adapter = adapter
 
         // Section Classici
-        val recyclerViewChinies = view.findViewById<RecyclerView>(R.id.rv_classici)
+        val classicBooksView = view.findViewById<RecyclerView>(R.id.rv_classic)
         layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
-        recyclerViewChinies?.layoutManager = layoutManager
-        adapter = ContainerAdapter(productsClassici)
-        recyclerViewChinies?.adapter = adapter
+        classicBooksView?.layoutManager = layoutManager
+        adapter = ContainerAdapter(classicBooks)
+        classicBooksView?.adapter = adapter
 
-        // Section Lingue
-        val recyclerViewThai = view.findViewById<RecyclerView>(R.id.rv_lingue)
+        // Section Psicologia
+        val psychoBooksView = view.findViewById<RecyclerView>(R.id.rv_psycho)
         layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
-        recyclerViewThai?.layoutManager = layoutManager
-        adapter = ContainerAdapter(productsLingue)
-        //adapter.replaceItems(products)
-        recyclerViewThai?.adapter = adapter
+        psychoBooksView?.layoutManager = layoutManager
+        adapter = ContainerAdapter(psychoBooks)
+        psychoBooksView?.adapter = adapter
 
     }
 }

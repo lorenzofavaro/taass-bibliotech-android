@@ -1,6 +1,6 @@
 package taass.bibliotech.model
 
-data class Books (
+data class Books(
     val id: Long,
     val title: String,
     val author: String,
